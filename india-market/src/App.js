@@ -1,8 +1,7 @@
  
-import Navbar from './Component.jsx/Navbar';
- import HomePage from './Pages/Home';
- import Footer from './Component.jsx/Footer';
- import AllRoutes from './Component.jsx/AllRoutes';
+import Navbar from './Component/Navbar';
+ import Footer from './Component/Footer';
+ import AllRoutes from './Component/AllRoutes';
 function App() {
   return (
     <div className="App">

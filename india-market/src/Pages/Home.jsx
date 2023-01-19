@@ -1,5 +1,5 @@
- import Carousel from "../Component.jsx/Carousel"
- import Category from "../Component.jsx/category"
+ import Carousel from "../Component/Carousel"
+ import Category from "../Component/category"
  import axios from "axios";
  import { useReducer} from "react";
  import { useEffect } from "react";
