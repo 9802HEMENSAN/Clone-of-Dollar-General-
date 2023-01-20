@@ -11,6 +11,7 @@ import {
   import { Text } from '@chakra-ui/react'
   import { Image ,Box} from '@chakra-ui/react'
   import { useDisclosure } from '@chakra-ui/react';
+  import {Link as RouterLink} from "react-router-dom"
   function  Model(props) {
     const { category ,
       image ,
@@ -41,9 +42,11 @@ import {
             </ModalBody>
   
             <ModalFooter>
+              <RouterLink to="/cart"> 
               <Button colorScheme='blue' mr={3} onClick={onClose}>
              Added to cart
               </Button>
+              </RouterLink>
               <Button colorScheme='blue' onClick={onClose}> Thank you </Button>
             </ModalFooter>
           </ModalContent>

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useReducer } from "react";
  import { useParams } from "react-router-dom";
  import Model from "../Component/Model";
-
+ 
  import {
     Box,
     chakra,
@@ -24,7 +24,7 @@ import { useReducer } from "react";
   } from '@chakra-ui/react';
   import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
   import { MdLocalShipping } from 'react-icons/md';
-
+ 
 let initialState={
   products:[],
   isLoading:false,
@@ -46,7 +46,7 @@ const reducer=(state,action)=>{
       return {
          products:[],
          isLoading:false,
-         isErr: "Something went wrong",
+         isErr: false,
       }
     }
     default : 
@@ -59,7 +59,6 @@ function ProductDetails(){
     const {id}=useParams();
     // console.log(id);
     const getData=async function getUser(){
-         
       axios.get(`https://fakestoreapi.com/products/${id}`).then((res)=>  
         dispatch({type : "FETCH_SUCCESS", payload : res.data})
        
@@ -74,7 +73,11 @@ function ProductDetails(){
     },[id])
   
     const {image,title,category,description,price,rating}=products
-    return  (
+    return isLoading ? 
+     <h1>Loading ...</h1> :
+    
+    isErr  ?  <h1>Something went wrong ! </h1>      : 
+    (
       <div>
           <div>Products Details page</div>
           <Container maxW={'7xl'}>
