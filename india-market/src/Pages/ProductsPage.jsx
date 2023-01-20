@@ -3,7 +3,8 @@ import axios from "axios";
 import { useReducer } from "react";
 import { Grid, GridItem } from '@chakra-ui/react'
 import ProductCard from "../Component/ProductCard";
-
+// import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
+import { Spinner } from '@chakra-ui/react'
 let initialState={
   products:[],
   isLoading:false,
@@ -59,15 +60,29 @@ const reducer=(state,action)=>{
       getData();
     },[])
   
-  return  isLoading  ?  <h1>Loading...</h1> : 
+  return  isLoading  ?            
+         (
+          <Spinner
+          marginTop="300px"
+          marginLeft="600px"
+          marginBottom="300px"
+          thickness='4px'
+          speed='0.65s'
+          emptyColor='gray.200'
+          color='blue.500'
+          size='xl'
+        />
+    )
+    : 
           isErr ?   <h1>Something went Wrong ! </h1> :
       (
       <div>
            <h1>Products</h1>
+           
         <Grid templateColumns='repeat(4, 1fr)' gap={6}>
           {
             products?.length>0 && products.map((e)=>{
-              return  <GridItem key={e.id} w='100%'  >
+              return <GridItem key={e.id} w='100%'  >
                    <ProductCard
                    id={e.id}
                    category={e.category}
@@ -77,10 +92,11 @@ const reducer=(state,action)=>{
                    title={e.title}
                    rating={e.rating.rate}
                    />
-              </GridItem>
+              </GridItem>        
             })
           }
           </Grid>
+          
       </div>
     )
   }
