@@ -1,9 +1,9 @@
+import {Link as RouterLink} from "react-router-dom"
 import { useEffect } from "react"
 import axios from "axios";
 import { useReducer } from "react";
  import { useParams } from "react-router-dom";
- import Model from "../Component/Model";
- 
+ import { CartPage } from "./CartPage";
  import {
     Box,
     chakra,
@@ -17,8 +17,6 @@ import { useReducer } from "react";
     Heading,
     SimpleGrid,
     StackDivider,
-    useColorModeValue,
-    VisuallyHidden,
     List,
     ListItem,
   } from '@chakra-ui/react';
@@ -55,6 +53,7 @@ const reducer=(state,action)=>{
 }
 function ProductDetails(){
     const [state, dispatch] = useReducer(reducer,initialState);
+  
     const {products,isLoading,isErr}=state;
     const {id}=useParams();
     // console.log(id);
@@ -72,7 +71,20 @@ function ProductDetails(){
       getData();
     },[id])
   
-    const {image,title,category,description,price,rating}=products
+    const {image,title,category,description,price,rating}=products;
+    
+    function Cart(){
+      return (
+        <CartPage 
+        image={image}
+        title={title}
+        category={category}
+        description={description}
+        price={price}
+        rating={rating}
+      />
+      )
+    }
     return isLoading ? 
      <h1>Loading ...</h1> :
     
@@ -107,13 +119,13 @@ function ProductDetails(){
              {title}
             </Heading>
             <Text
-              color={useColorModeValue('gray.900', 'gray.400')}
+              color="black"
               fontWeight={300}
               fontSize={'2xl'}>
               {`Price : ${price}`}
             </Text>
             <Text
-              color={useColorModeValue('gray.900', 'gray.400')}
+              color="black"
               fontWeight={300}
               fontSize={'2xl'}>
             {/* { `Rating : ${rating.rate}`} */} yes
@@ -125,7 +137,7 @@ function ProductDetails(){
             direction={'column'}
             divider={
               <StackDivider
-                borderColor={useColorModeValue('gray.200', 'gray.600')}
+                borderColor="black"
               />
             }>
             <VStack spacing={{ base: 4, sm: 6 }}>
@@ -142,7 +154,7 @@ function ProductDetails(){
             <Box>
               <Text
                 fontSize={{ base: '16px', lg: '18px' }}
-                color={useColorModeValue('yellow.500', 'yellow.300')}
+                color= "black"
                 fontWeight={'500'}
                 textTransform={'uppercase'}
                 mb={'4'}>
@@ -165,7 +177,7 @@ function ProductDetails(){
             <Box>
               <Text
                 fontSize={{ base: '16px', lg: '18px' }}
-                color={useColorModeValue('yellow.500', 'yellow.300')}
+                color="black"
                 fontWeight={'500'}
                 textTransform={'uppercase'}
                 mb={'4'}>
@@ -219,30 +231,30 @@ function ProductDetails(){
               </List>
             </Box>
           </Stack>
-
+          <RouterLink to="/cart"> 
           <Button
             rounded={'none'}
             w={'full'}
             mt={8}
             size={'lg'}
             py={'7'}
-            bg={useColorModeValue('gray.900', 'gray.50')}
-            color={useColorModeValue('white', 'gray.900')}
+            bg="black"
+            color= "black"
             textTransform={'uppercase'}
             _hover={{
               transform: 'translateY(2px)',
               boxShadow: 'lg',
-            }}   colorScheme='black' >
-              <Model 
+            }}   colorScheme='black' onClick={Cart}>
+              {/* <Model 
               image={image}
               title={title}
               category={category}
               description={description}
               price={price}
               rating={rating}
-              />
+              /> */}
           </Button>
-
+          </RouterLink> 
           <Stack direction="row" alignItems="center" justifyContent={'center'}>
             <MdLocalShipping />
             <Text>2-3 business days delivery</Text>
