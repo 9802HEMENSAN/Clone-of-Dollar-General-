@@ -1,25 +1,14 @@
-import { createContext, useState } from "react";
-import { Navigate } from "react-router-dom";
+ import React, { createContext  } from "react";
+ export const AuthContext=createContext();
+export default function AuthContextProvider({children}){
+    const[isAuth,setisAuth]=React.useState(false);
+    const[token,setToken]=React.useState('')
+   const login=(a)=>{
+       setisAuth(true)
+        setToken(a)
+   }
 
-export const AuthContext = createContext();
-
-function AuthContextProvider({ children }) {
-    const [isAuth, setisAuth] = useState(false);
-    const [token, settoken] = useState(null)
-    //login
-    const loginUser = (token) => {
-        setisAuth(true)
-        settoken(token)
-    }
-    const logoutUser = () => {
-        setisAuth(false)
-        settoken(null)
-        return <Navigate to="/login" />
-    }
-    return <AuthContext.Provider
-        value={{ authState: { isAuth, token }, loginUser, logoutUser }}
-
-    >{children}</AuthContext.Provider>
+    return(
+        <AuthContext.Provider value={{isAuth,setisAuth,login,token,setToken}}>{children}</AuthContext.Provider>
+    )
 }
-
-export default AuthContextProvider;

@@ -10,10 +10,18 @@ import {
   import * as React from 'react'
  import { CartItem } from '../Component/CartItem'
  import { CartOrderSummary } from '../Component/CartOrderSummary'
-import { cartData } from '../Component/_data'
+import { cartData } from '../Component/_data';
+
   
-  export const  CartPage = () => (
-    <Box
+  export const  CartPage = (props) => { 
+    const { category ,
+      image ,
+      price, 
+      title, 
+      rating 
+    }=props
+    console.log(image,price)
+   return ( <Box
       maxW={{
         base: '3xl',
         lg: '7xl',
@@ -30,6 +38,7 @@ import { cartData } from '../Component/_data'
         lg: '12',
       }}
     >
+  
       <Stack
         direction={{
           base: 'column',
@@ -70,5 +79,5 @@ import { cartData } from '../Component/_data'
         </Flex>
       </Stack>
     </Box>
-  )
-  
+     )
+  }

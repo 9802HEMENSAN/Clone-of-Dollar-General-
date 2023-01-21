@@ -9,7 +9,8 @@ import {
   import Products from "../Pages/ProductsPage";
   import ProductDetails from "../Pages/ProductDetails";
   import { CartPage } from "../Pages/CartPage";
-  // import PrivateRoute from "./PrivateRoute";
+  import PaymentPage from "../Pages/PaymentPage";
+  import PrivateRoute from "./PrivateRoute";
 function AllRoutes(){
 return (
     <div>
@@ -19,17 +20,25 @@ return (
       <Route path="/login" element={<Login />} />
       <Route path="/products" element={<Products/>}></Route>
       <Route path="/products/:id" element={
-        // <PrivateRoute> 
+        <PrivateRoute> 
           <ProductDetails/>
-        // </PrivateRoute>
+        </PrivateRoute>
       }></Route>
        
       <Route path="/cart" element={
-      // <PrivateRoute> 
+      <PrivateRoute> 
           <CartPage/>
-      // </PrivateRoute>
+       </PrivateRoute>
+      }></Route>
+       
+      <Route path="/payment" element={
+        <PrivateRoute> 
+          <PaymentPage/>
+      </PrivateRoute>
       }></Route>
     </Routes>
+
+    
     </div>
 )
 }
