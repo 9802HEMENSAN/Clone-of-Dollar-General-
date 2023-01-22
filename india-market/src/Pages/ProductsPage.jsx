@@ -47,7 +47,7 @@ const reducer=(state,action)=>{
     const getData=async function getUser(){
       dispatch({type : "FETCH_LOADING" })
       try {
-        const response=await axios.get("https://fakestoreapi.com/products")
+        const response=await axios.get("https://mock-server-app-o0ff.onrender.com/products-page")
         dispatch({type : "FETCH_SUCCESS", payload : response.data})
         // console.log(response.data)
       } catch (error) {

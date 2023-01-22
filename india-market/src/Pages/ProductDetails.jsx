@@ -58,7 +58,7 @@ function ProductDetails(){
     const {id}=useParams();
     // console.log(id);
     const getData=async function getUser(){
-      axios.get(`https://fakestoreapi.com/products/${id}`).then((res)=>  
+      axios.get(`https://mock-server-app-o0ff.onrender.com/products-page/${id}`).then((res)=>  
         dispatch({type : "FETCH_SUCCESS", payload : res.data})
        
      ).then((data)=>console.log(data)).catch((err)=>
