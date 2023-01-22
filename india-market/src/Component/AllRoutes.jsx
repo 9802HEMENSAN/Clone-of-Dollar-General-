@@ -9,7 +9,7 @@ import {
   import ProductDetails from "../Pages/ProductDetails";
   import PaymentPage from "../Pages/PaymentPage";
   import Admin from "../Pages/AdminPage";
-  // import PrivateRoute from "./PrivateRoute";
+  import PrivateRoute from "./PrivateRoute";
 function AllRoutes(){
 return (
     <div>
@@ -19,15 +19,15 @@ return (
       <Route path="/products" element={<Products/>}></Route>
       <Route path="/admin" element={<Admin/>}></Route>
       <Route path="/products/:id" element={
-        // <PrivateRoute> 
+        <PrivateRoute> 
           <ProductDetails/>
-        // </PrivateRoute>
+       </PrivateRoute>
       }></Route>
        
       <Route path="/payment" element={
-        // <PrivateRoute> 
+      <PrivateRoute> 
           <PaymentPage/>
-      // </PrivateRoute>
+     </PrivateRoute>
       }></Route>
     </Routes>
     </div>
