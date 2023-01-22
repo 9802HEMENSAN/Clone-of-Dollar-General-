@@ -264,13 +264,13 @@ import {
       label: 'Products',
       children: [
         {
-          label: 'Explore Design Work',
-          subLabel: 'Trending Design to inspire you',
+          label: 'trending Products',
+          subLabel: 'Top Deals',
           href: '#',
         },
         {
-          label: 'New & Noteworthy',
-          subLabel: 'Up-and-coming Designers',
+          label: 'Electronics',
+          subLabel: 'Unique technology',
           href: '#',
         },
       ],
@@ -284,18 +284,18 @@ import {
           href: '#',
         },
         {
-          label: 'Freelance Projects',
+          label: 'Projects',
           subLabel: 'An exclusive list for contract work',
           href: '#',
         },
       ],
     },
     {
-      label: 'Learn Design',
+      label: 'Weekly ads',
       href: '#',
     },
     {
-      label: 'Hire Designers',
+      label: 'Carrers',
       href: '#',
     },
   ];

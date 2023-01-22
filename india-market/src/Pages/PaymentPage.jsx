@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import  ToastExample from "../Component/Toasts"
+import   AlertDialogs from "../Component/AlertPay"
 import { Heading  } from '@chakra-ui/react'
 import {
   FormControl,
@@ -61,12 +61,12 @@ const PaymentPage = () => {
           <Input name="paypalEmail" />
             
         </FormControl > 
-      <Button   bg="black"
+      <Button    colorScheme="green"
             color= "white"   _hover={{
             transform: 'translateY(4px)',
             boxShadow: 'lg',
-            bg:"black", color:"white"
-          }}  type="submit"  >< ToastExample/> </Button>
+            colorScheme:"green", color:"white"
+          }} > < AlertDialogs/>  </Button>
     </form>
   );
 };
