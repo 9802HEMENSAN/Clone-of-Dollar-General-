@@ -24,11 +24,11 @@ import {
     const [count,setCount]=useState(1);
     return (
       <>
-        <Button  bg="black"
+        <Button   bg="orange.400"
            _hover={{
             transform: 'translateY(4px)',
             boxShadow: 'lg',
-            bg:"black"
+            bg:"orange.400"
           }} onClick={onOpen}>Add To Cart</Button>
   
         <Modal isOpen={isOpen} onClose={onClose}>
@@ -42,20 +42,23 @@ import {
            <Image src= {image} alt='Dan Abramov'  height='100%' />
              </Box>
              <Box> 
-             <Text  fontSize='2xl'>{category}</Text>
-             <Text fontSize='2xl'>Price={price}</Text>
+             <Text  marginLeft="10px" fontSize='20px'>Category : {category}</Text>
+             <Text  marginLeft="10px" fontSize='20px'>Price : $ {price * count}</Text>
              {/* <Text fontSize='2xl'>Rating={rating}</Text> */}
              </Box>
-             <Button disabled={count=== 1 }onClick={()=>setCount(count-1)}>-</Button>
+               <br />
+               <Box marginLeft="150px"> 
+             <Button m="5px" bg="orange.200" disabled={count=== 1 }onClick={()=>setCount(count-1)}>-</Button>
              <Button >{count}</Button>
-             <Button onClick={()=>setCount(count+1)}>+</Button>
+             <Button  m="5px" bg="orange.200" onClick={()=>setCount(count+1)}>+</Button>
+             </Box>
             </ModalBody>
            
             <ModalFooter>
               <RouterLink to="/payment"> 
-              <Button >Checkout </Button>
+              <Button colorScheme="orange" >Checkout </Button>
               </RouterLink>
-              <Button colorScheme='blue' onClick={onClose}> Thank you </Button>
+              
             </ModalFooter>
           </ModalContent>
         </Modal>

@@ -53,7 +53,7 @@ let initialState={
 
     const getData=async function getUser(){
       try {
-        const response=await axios.get("https://mock-server-app-o0ff.onrender.com/Home-products")
+        const response=await axios.get("https://mock-api-server-2399.onrender.com/Home-products")
         dispatch({type : "FETCH_SUCCESS", payload : response.data})
         // console.log(response.data)
       } catch (error) {
@@ -68,16 +68,18 @@ let initialState={
     
     return  (
         <div>
-          <Grid templateColumns='repeat(4, 1fr)' gap={6} margin={"auto"} justifyContent={"space-around"}
+          <Grid   templateColumns="repeat(auto-fill, minmax(300px, 1fr))" gap={6} margin={"auto"} justifyContent={"space-around"}
           width="80%" >
             {
               products?.length>0 && products.map((e)=>{
                 return  <GridItem key={e.id} w='100%'  >
-                     <Category
+                  <RouterLink to="/products"> 
+                     <Category 
                      id={`${e.cmp_image__title}`}
                      image={`${e.cmp_image__image_src}`}
                      title={`${e.cmp_image__title}`}
                      />
+                     </RouterLink>
                 </GridItem>
               })
             }

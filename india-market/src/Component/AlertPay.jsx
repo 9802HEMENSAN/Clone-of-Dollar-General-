@@ -16,7 +16,7 @@ import { Button } from '@chakra-ui/react'
 
   return (
     <>
-      <Button colorScheme='green' onClick={onOpen}>
+      <Button colorScheme='orange'   onClick={onOpen}>
          Pay Now 
       </Button>
 
@@ -36,11 +36,8 @@ import { Button } from '@chakra-ui/react'
             </AlertDialogBody>
 
             <AlertDialogFooter>
-              <Button ref={cancelRef} onClick={onClose}>
-                   Thank you 
-              </Button>
-              <Button colorScheme='green' onClick={onClose} ml={3}>
-                    Welcome !
+              <Button   colorScheme="orange" onClick={onClose} ml={3}>
+                 Thank you !
               </Button>
             </AlertDialogFooter>
           </AlertDialogContent>

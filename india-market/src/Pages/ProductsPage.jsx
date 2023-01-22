@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import axios from "axios";
 import { useReducer } from "react";
 import { Grid, GridItem } from '@chakra-ui/react'
-import ProductCard from "../Component/AlertDialog";
+import ProductCard from "../Component/ProductCard";
 // import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
 import { Spinner } from '@chakra-ui/react'
 let initialState={
@@ -47,7 +47,7 @@ const reducer=(state,action)=>{
     const getData=async function getUser(){
       dispatch({type : "FETCH_LOADING" })
       try {
-        const response=await axios.get("https://mock-server-app-o0ff.onrender.com/products-page")
+        const response=await axios.get("https://mock-api-server-2399.onrender.com/products-page")
         dispatch({type : "FETCH_SUCCESS", payload : response.data})
         // console.log(response.data)
       } catch (error) {
@@ -77,9 +77,8 @@ const reducer=(state,action)=>{
           isErr ?   <h1>Something went Wrong ! </h1> :
       (
       <div>
-           <h1>Products</h1>
            
-        <Grid templateColumns='repeat(4, 1fr)' gap={6}>
+        <Grid  templateColumns="repeat(auto-fill, minmax(300px, 1fr))" gap={6}>
           {
             products?.length>0 && products.map((e)=>{
               return <GridItem key={e.id} w='100%'  >

@@ -1,11 +1,11 @@
-// https://mock-server-app-o0ff.onrender.com
+//  https://mock-api-server-2399.onrender.com/Products
 
 import Pagination from "../Component/Pagination";
  import ProductForm from "../Component/ProductForm";
  import ProductItem from "../Component/ProductItem";
 import { useState, useEffect } from "react";
 import { Heading } from "@chakra-ui/layout";
-
+ 
 
 const getData = async (url) => {
   try {
@@ -30,7 +30,7 @@ function Admin() {
   const fetchAndUpdateData = async (page) => {
     setLoading(true);
     try {
-      let res = await getData(`https://mock-server-app-o0ff.onrender.com/Products?_page=${page}&_limit=3`);
+      let res = await getData(`https://mock-api-server-2399.onrender.com/Products?_page=${page}&_limit=3`);
       const { totalCount, data } = res;
       setProducts(data);
       setTotalCount(totalCount);
@@ -53,7 +53,7 @@ function Admin() {
 
   const handleFormSubmit = (formData) => {
     setLoading(true);
-    fetch(`https://mock-server-app-o0ff.onrender.com/Products`, {
+    fetch(`https://mock-api-server-2399.onrender.com/Products`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,7 +73,7 @@ function Admin() {
 
   const handledelete= async(id)=>{
     try {
-          const deletData=  await fetch(`https://mock-server-app-o0ff.onrender.com/Products/${id}`,{
+          const deletData=  await fetch(`https://mock-api-server-2399.onrender.com/Products/${id}`,{
             method:"DELETE",
             headers:{
               "Content-Type":'application/json',

@@ -58,7 +58,7 @@ function ProductDetails(){
     const {id}=useParams();
     // console.log(id);
     const getData=async function getUser(){
-      axios.get(`https://mock-server-app-o0ff.onrender.com/products-page/${id}`).then((res)=>  
+      axios.get(`https://mock-api-server-2399.onrender.com/products-page/${id}`).then((res)=>  
         dispatch({type : "FETCH_SUCCESS", payload : res.data})
        
      ).then((data)=>console.log(data)).catch((err)=>
@@ -226,14 +226,14 @@ function ProductDetails(){
             mt={8}
             size={'lg'}
             py={'7'}
-            bg="black"
+            bg="orange.400"
             color= "white"
             textTransform={'uppercase'}
             _hover={{
               transform: 'translateY(2px)',
               boxShadow: 'lg',
-              bg:"black"
-            }}   colorScheme='black'
+              bg:"orange.400"
+            }}   colorScheme='orange.400'
              >
               <Model 
               image={image}

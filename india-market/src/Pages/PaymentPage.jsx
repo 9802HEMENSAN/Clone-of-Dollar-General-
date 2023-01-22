@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import   AlertDialogs from "../Component/AlertPay"
-import { Heading  } from '@chakra-ui/react'
+import { Container, Heading  } from '@chakra-ui/react'
 import {
   FormControl,
   FormLabel,
@@ -14,10 +14,12 @@ import {
 const PaymentPage = () => {
  
   return (
-    <form   minH={'110vh'}
+    <Container marginTop="40px"  marginBottom="40px"  padding="15px" 
+    boxShadow= "rgba(0, 0, 0, 0.24) 0px 3px 8px"> 
+    <form   minH={'110vh'} 
     align={'center'}
     justify={'center'}
-     bg={"blue.400"}
+     bg={"orange.400"}
       >
       <Heading >Payment Information</Heading>
       <FormControl   mx={'auto'} maxW={'lg'} >
@@ -61,13 +63,14 @@ const PaymentPage = () => {
           <Input name="paypalEmail" />
             
         </FormControl > 
-      <Button    colorScheme="green"
+      <Button    colorScheme="orange"
             color= "white"   _hover={{
             transform: 'translateY(4px)',
             boxShadow: 'lg',
-            colorScheme:"green", color:"white"
+            colorScheme:"orange", color:"white"
           }} > < AlertDialogs/>  </Button>
     </form>
+    </Container>
   );
 };
 

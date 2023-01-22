@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { AuthContext } from '../Context/AuthContext';
 import { Navigate} from 'react-router-dom';
 import { useState } from 'react';
+import ToastFeed from '../Component/ToastFeed';
 import {
       Flex,
       Box,
@@ -56,6 +57,7 @@ const handlePassword=(e)=>{
       },
     }).then((res)=>res.json()).then((data)=>{
       setToken(data.token);
+ 
       login();
     })
   };
@@ -72,7 +74,7 @@ const handlePassword=(e)=>{
           <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Sign in to your account</Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
-              to enjoy all of our cool <Link color={'blue.400'}>features</Link> ✌️
+              to enjoy all of our cool <Link color={'orange.400'}>features</Link> ✌️
             </Text>
           </Stack>
           <Box
@@ -93,20 +95,18 @@ const handlePassword=(e)=>{
                   direction={{ base: 'column', sm: 'row' }}
                   align={'start'}
                   justify={'space-between'}>
-                  <Checkbox>Remember me</Checkbox>
-                  <Link color={'blue.400'}>Forgot password?</Link>
+                  <Checkbox >Remember me</Checkbox>
+                  <Link color={'orange.400'}>Forgot password?</Link>
                 </Stack>
                 <Button
                 onClick={handleClick}
-                  bg={'blue.400'}
+                  bg={'orange.400'}
                   color={'white'}
                   _hover={{
-                    bg: 'blue.500',
-                    
+                    bg: 'orange.500',
                   }}>
-                  Sign in 
+                    <ToastFeed/>
                 </Button>
-                {/* <Link href='/signup'>SignUp</Link> */}
               </Stack>
             </Stack>
           </Box>

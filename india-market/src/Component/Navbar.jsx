@@ -29,8 +29,8 @@ import {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
-      <Box>
-        <Flex
+      <Box >
+        <Flex 
           bg={useColorModeValue('black', 'black')}
           color={useColorModeValue('white', 'white')}
           minH={'60px'}
@@ -77,10 +77,10 @@ import {
                    fontSize={'sm'}
                    fontWeight={600}
                    color={'white'}
-                   bg={'blue.600'}
+                   bg={'orange.500'}
                    href={'#'}
                    _hover={{
-                     bg: 'pink.300',
+                     bg: 'orange.400',
                    }} >
                   Sign In
                 </Button>
@@ -92,10 +92,10 @@ import {
               fontSize={'sm'}
               fontWeight={600}
               color={'white'}
-              bg={'blue.600'}
+              bg={'orange.500'}
               href={'#'}
               _hover={{
-                bg: 'pink.300',
+                bg: 'orange.400',
               }} >
               Admin
                
@@ -117,10 +117,10 @@ import {
     const popoverContentBgColor = useColorModeValue('black', 'black');
   
     return (
-      <Stack direction={'row'} spacing={4}>
+      <Stack direction={'row'} spacing={4}  marginTop="15px">
         {NAV_ITEMS.map((navItem) => (
-          <Box key={navItem.label}>
-            <Popover trigger={'hover'} placement={'bottom-start'}>
+          <Box key={navItem.label}   >
+            <Popover trigger={'hover'} placement={'bottom-start'} >
               <PopoverTrigger>
                 <RouterLink  
                   p={2}
@@ -138,13 +138,13 @@ import {
               </PopoverTrigger>
   
               {navItem.children && (
-                <PopoverContent
+                <PopoverContent 
                   border={0}
                   boxShadow={'xl'}
                   bg={popoverContentBgColor}
                   p={4}
                   rounded={'xl'}
-                  minW={'sm'}>
+                  minW={'sm'} >
                   <Stack>
                     {navItem.children.map((child) => (
                       <RouterLink to="/products" >  
@@ -170,8 +170,8 @@ import {
         p={2}
         rounded={'md'}
         _hover={{ bg: useColorModeValue('pink.50', 'black') }}>
-        <Stack direction={'row'} align={'center'}>
-          <Box>
+        <Stack direction={'row'} align={'center'} >
+          <Box >
             <Text
               transition={'all .3s ease'}
               _groupHover={{ color: 'pink.400' }}
@@ -202,7 +202,7 @@ import {
         p={4}
         display={{ md: 'none' }}>
         {NAV_ITEMS.map((navItem) => (
-          <MobileNavItem key={navItem.label} {...navItem} />
+          <MobileNavItem  key={navItem.label} {...navItem} />
         ))}
       </Stack>
     );

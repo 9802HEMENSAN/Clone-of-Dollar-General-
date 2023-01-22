@@ -1,6 +1,6 @@
 import { Heading } from "@chakra-ui/layout";
 import {useState} from "react";
-
+ 
 const initState={
     title:"",
     price:"",
@@ -20,6 +20,7 @@ export default function ProductForm({handleFormSubmit}){
   
     const handleSubmit=(e)=>{
         e.preventDefault();
+     
         handleFormSubmit(formState)
         setFormState(initState);
     };
@@ -68,8 +69,8 @@ export default function ProductForm({handleFormSubmit}){
                    />
                 </label>
                 <br /><br />
-                <input type="submit" value="CREATE PRODUCT" style={{border:'2px solid black',borderRadius:'20px',padding:'5px',backgroundColor:'black',color:"white",cursor:"pointer",
-            margin:"10px"}} />
+                <input type="submit" value="CREATE PRODUCT" style={{border:'2px solid black',borderRadius:'20px',padding:'5px', backgroundColor:'black',color:"white",cursor:"pointer",
+            margin:"10px"}}  />
             </form>
         </div>
     )
