@@ -84,13 +84,13 @@ const reducer=(state,action)=>{
             products?.length>0 && products.map((e)=>{
               return <GridItem key={e.id} w='100%'  >
                    <ProductCard
-                   id={e.id}
-                   category={e.category}
-                   description={e.description}
-                   image={e.image}
-                   price={e.price}
-                   title={e.title}
-                   rating={e.rating.rate}
+                      id={e.id}
+                      category={e.category}
+                      description={e.description}
+                      image={e.image}
+                      price={e.price}
+                      title={e.title}
+                      rating={e.rating.rate}
                    />
               </GridItem>        
             })

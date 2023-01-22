@@ -76,12 +76,12 @@ function ProductDetails(){
     function Cart(){
       return (
         <CartPage 
-        image={image}
-        title={title}
-        category={category}
-        description={description}
-        price={price}
-        rating={rating}
+          image={image}
+          title={title}
+          category={category}
+          description={description}
+          price={price}
+          rating={rating}
       />
       )
     }
