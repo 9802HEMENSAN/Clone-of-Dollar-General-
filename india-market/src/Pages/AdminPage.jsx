@@ -30,7 +30,7 @@ function Admin() {
   const fetchAndUpdateData = async (page) => {
     setLoading(true);
     try {
-      let res = await getData(`http://localhost:8080/products?_page=${page}&_limit=3`);
+      let res = await getData(`https://mock-server-app-o0ff.onrender.com/Products?_page=${page}&_limit=3`);
       const { totalCount, data } = res;
       setProducts(data);
       setTotalCount(totalCount);

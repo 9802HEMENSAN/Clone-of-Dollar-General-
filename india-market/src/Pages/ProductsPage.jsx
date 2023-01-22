@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import axios from "axios";
 import { useReducer } from "react";
 import { Grid, GridItem } from '@chakra-ui/react'
-import ProductCard from "../Component/ProductCard";
+import ProductCard from "../Component/AlertDialog";
 // import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
 import { Spinner } from '@chakra-ui/react'
 let initialState={
