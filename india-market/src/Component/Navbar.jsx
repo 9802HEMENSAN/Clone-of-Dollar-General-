@@ -86,7 +86,7 @@ import {
                 </Button>
             </RouterLink>
 
-            <RouterLink to="/signup"> 
+            <RouterLink to="/admin"> 
             <Button
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
@@ -97,7 +97,7 @@ import {
               _hover={{
                 bg: 'pink.300',
               }} >
-              Sign Up
+              Admin
                
             </Button>
             </RouterLink>
