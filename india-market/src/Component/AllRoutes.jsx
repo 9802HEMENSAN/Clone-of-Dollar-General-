@@ -3,42 +3,33 @@ import {
     Route,
   } from "react-router-dom";
 
-  import Signup from "../Pages/Signup";
   import HomePage from "../Pages/Home";
   import Login from "../Pages/Login";
   import Products from "../Pages/ProductsPage";
   import ProductDetails from "../Pages/ProductDetails";
-  import { CartPage } from "../Pages/CartPage";
   import PaymentPage from "../Pages/PaymentPage";
-  import PrivateRoute from "./PrivateRoute";
+  import Admin from "../Pages/AdminPage";
+  // import PrivateRoute from "./PrivateRoute";
 function AllRoutes(){
 return (
     <div>
      <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/signup" element={<Signup/>} />
       <Route path="/login" element={<Login />} />
       <Route path="/products" element={<Products/>}></Route>
+      <Route path="/admin" element={<Admin/>}></Route>
       <Route path="/products/:id" element={
-        <PrivateRoute> 
+        // <PrivateRoute> 
           <ProductDetails/>
-        </PrivateRoute>
-      }></Route>
-       
-      <Route path="/cart" element={
-      <PrivateRoute> 
-          <CartPage/>
-       </PrivateRoute>
+        // </PrivateRoute>
       }></Route>
        
       <Route path="/payment" element={
-        <PrivateRoute> 
+        // <PrivateRoute> 
           <PaymentPage/>
-      </PrivateRoute>
+      // </PrivateRoute>
       }></Route>
     </Routes>
-
-    
     </div>
 )
 }

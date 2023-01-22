@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import  ToastExample from "../Component/Toasts"
-import { useToast } from '@chakra-ui/react'
+import { Heading  } from '@chakra-ui/react'
 import {
   FormControl,
   FormLabel,
@@ -14,14 +14,14 @@ import {
 const PaymentPage = () => {
  
   return (
-    <form   minH={'100vh'}
+    <form   minH={'110vh'}
     align={'center'}
     justify={'center'}
      bg={"blue.400"}
       >
-      <h1 >Payment Information</h1>
+      <Heading >Payment Information</Heading>
       <FormControl   mx={'auto'} maxW={'lg'} >
-        <FormLabel>Payment Method</FormLabel>
+        <FormLabel >Payment Method</FormLabel>
         <RadioGroup   rounded={'lg'}
           bg={useColorModeValue('white', 'gray.700')}
           boxShadow={'lg'}
@@ -61,7 +61,12 @@ const PaymentPage = () => {
           <Input name="paypalEmail" />
             
         </FormControl > 
-      <Button    bg={'blue.400'} variantColor="blue.500" type="submit"  >< ToastExample/> Place Order </Button>
+      <Button   bg="black"
+            color= "white"   _hover={{
+            transform: 'translateY(4px)',
+            boxShadow: 'lg',
+            bg:"black", color:"white"
+          }}  type="submit"  >< ToastExample/> </Button>
     </form>
   );
 };

@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import axios from "axios";
 import { useReducer } from "react";
  import { useParams } from "react-router-dom";
- import { CartPage } from "./CartPage";
+ import Model from "../Component/Model";
  import {
     Box,
     chakra,
@@ -72,19 +72,7 @@ function ProductDetails(){
     },[id])
   
     const {image,title,category,description,price,rating}=products;
-    
-    function Cart(){
-      return (
-        <CartPage 
-          image={image}
-          title={title}
-          category={category}
-          description={description}
-          price={price}
-          rating={rating}
-      />
-      )
-    }
+ 
     return isLoading ? 
      <h1>Loading ...</h1> :
     
@@ -231,7 +219,7 @@ function ProductDetails(){
               </List>
             </Box>
           </Stack>
-          <RouterLink to="/cart"> 
+  
           <Button
             rounded={'none'}
             w={'full'}
@@ -239,22 +227,24 @@ function ProductDetails(){
             size={'lg'}
             py={'7'}
             bg="black"
-            color= "black"
+            color= "white"
             textTransform={'uppercase'}
             _hover={{
               transform: 'translateY(2px)',
               boxShadow: 'lg',
-            }}   colorScheme='black' onClick={Cart}>
-              {/* <Model 
+              bg:"black"
+            }}   colorScheme='black'
+             >
+              <Model 
               image={image}
               title={title}
               category={category}
               description={description}
               price={price}
               rating={rating}
-              /> */}
+              />
           </Button>
-          </RouterLink> 
+ 
           <Stack direction="row" alignItems="center" justifyContent={'center'}>
             <MdLocalShipping />
             <Text>2-3 business days delivery</Text>
