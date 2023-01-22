@@ -1,3 +1,5 @@
+// https://mock-server-app-o0ff.onrender.com
+ 
  import Carousel from "../Component/Carousel"
  import Category from "../Component/category"
  import axios from "axios";
@@ -51,7 +53,7 @@ let initialState={
 
     const getData=async function getUser(){
       try {
-        const response=await axios.get("http://localhost:8080/Home-products")
+        const response=await axios.get("https://mock-server-app-o0ff.onrender.com/Home-products")
         dispatch({type : "FETCH_SUCCESS", payload : response.data})
         // console.log(response.data)
       } catch (error) {

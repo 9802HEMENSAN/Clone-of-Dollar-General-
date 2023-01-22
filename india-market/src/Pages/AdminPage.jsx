@@ -1,4 +1,6 @@
- import Pagination from "../Component/Pagination";
+// https://mock-server-app-o0ff.onrender.com
+
+import Pagination from "../Component/Pagination";
  import ProductForm from "../Component/ProductForm";
  import ProductItem from "../Component/ProductItem";
 import { useState, useEffect } from "react";
@@ -51,7 +53,7 @@ function Admin() {
 
   const handleFormSubmit = (formData) => {
     setLoading(true);
-    fetch(`http://localhost:8080/products`, {
+    fetch(`https://mock-server-app-o0ff.onrender.com/Products`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,7 +73,7 @@ function Admin() {
 
   const handledelete= async(id)=>{
     try {
-          const deletData=  await fetch(`http://localhost:8080/products/${id}`,{
+          const deletData=  await fetch(`https://mock-server-app-o0ff.onrender.com/Products/${id}`,{
             method:"DELETE",
             headers:{
               "Content-Type":'application/json',
@@ -117,7 +119,7 @@ function Admin() {
         handlePageChange={handlePageChange}
         totalCount={totalCount}
       />
-      
+
     </div>
     );
 }
